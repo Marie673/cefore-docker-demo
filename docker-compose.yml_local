@@ -7,7 +7,7 @@ services:
     hostname: "publisher"
     working_dir: "/cefore"
     volumes:
-      - ${node_bindir:-$(pwd)}/bin/:/cefore/bin
+      - ${node_bindir:-$PWD}/bin/:/cefore/bin
       - /tmp/log:/tmp/log
     networks:
       downward:

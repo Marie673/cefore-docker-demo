@@ -1,12 +1,25 @@
 version: "3.8"
+
 services:
+  publisher:
+    image: cefore/cef_local
+    container_name: "publisher"
+    hostname: "publisher"
+    working_dir: "/cefore"
+    volumes:
+      - ${node_bindir:-$PWD}/bin/:/cefore/bin
+      - /tmp/log:/tmp/log
+    networks:
+      downward:
+        ipv4_address: 10.0.1.10
+
   consumer:
     image: cefore/cef_client
     container_name: "consumer"
     hostname: "consumer"
     working_dir: "/cefore"
     volumes:
-      - ${node_bindir:-$(pwd)}/bin/:/cefore/bin
+      - ${node_bindir:-$PWD}/bin/:/cefore/bin
       - /tmp/log:/tmp/log
     networks:
       downward:
