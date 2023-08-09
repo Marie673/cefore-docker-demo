@@ -18,6 +18,8 @@ services:
     container_name: "consumer"
     hostname: "consumer"
     working_dir: "/cefore"
+    environment:
+      - DISPLAY=${DISPLAY}
     volumes:
       - ${node_bindir:-$(pwd)}/bin/:/cefore/bin
       - /tmp/log:/tmp/log
