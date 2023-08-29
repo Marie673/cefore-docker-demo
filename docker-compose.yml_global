@@ -9,6 +9,8 @@ services:
     volumes:
       - ./bin/:/cefore/bin
       - /tmp/log:/tmp/log
+    ports:
+      - 9896:9896
     networks:
       downward:
         ipv4_address: 10.0.1.100
