@@ -9,6 +9,7 @@ RUN apt-get install -y git build-essential libssl-dev libtool
 RUN apt-get install -y emacs
 RUN apt-get install -y iputils-ping net-tools ifstat
 RUN apt-get install -y cmake python3-pip
+RUN apt-get install -y xserver-xorg x11-apps
 RUN pip3 install --upgrade pip
 RUN pip3 install setuptools click numpy
 
